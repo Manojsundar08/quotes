@@ -1,89 +1,10 @@
 <html>
-   <script>
-    function load() {
-        
-           var xhttp=new XMLHttpRequest();
-           xhttp.onreadystatechange=function(){
-               if(this.readyState==4 && this.status==200){
-                  var myArr = JSON.parse(this.responseText);
-                  var x=myArr.quotes[currentItem];
-                document.getElementById("demo").innerHTML= x.quote ;
-                document.getElementById("text").innerHTML=x.author;
-                document.getElementById("prev-quote").disabled=currentItem<=0;
-                 document.getElementById("next-quote")
-               }
-           };
-           xhttp.open("GET","https://gist.githubusercontent.com/balasubramanim/95406cbd0e17d63085de11a1f13e06b3/raw/",true);
-           xhttp.send();
-       }  
-
-       load();
-       var currentItem = 0;
-       window.onload=function() {
-           document.getElementById("prev-quote").onclick=function() {
-              currentItem--;
-              document.body.style.backgroundColor=getRandomColor();
-               if(currentItem<=0) {
-                   currentItem=0;
-               }
-               load();
-           }
-           document.getElementById("next-quote").onclick=function() {
-               load();
-               currentItem++;
-               document.body.style.backgroundColor=getRandomColor();
-               if(currentItem==102)
-               {
-                   currentItem=0;
-               }
-           }
-       }
-       
-      function getRandomColor() {
-          var letters='0123456789ABCDEF'
-       var color= '#';
-                for(i=0;i<6;i++)         
-                {
-               color += letters[Math.floor(Math.random() * 16)];
-                } 
-                return color;
-            };
-   </script>
-   <style>
-        .quot {
-            font-weight: inherit;
-            padding-top: 33vh;
-            font-size: x-large;
-            margin-bottom: 3%;
-            margin-left : 35%;
-            margin-right: 28%;
-            }
-            .texts {
-                top: 3%;
-                font-weight: inherit;
-                margin-left:35%;
-            }
-
-       .circle {
-        margin-left: 35%;
-        margin-top: 3%;
-          }
-          .circle a {
-              text-decoration: none;
-              display: inline-block;
-              padding: 8px 16px;
-          }
-          .circle a {
-              background-color: #f1f1f1;
-              color: black;
-              border-radius: 50%;
-          }  
-          .circle:hover a {
-              background-color: #ddd;
-              color:black;
-          }
-   </style>
+    <title>Quotes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <script src="quotes.js"> </script>
+    <link rel="stylesheet" href="quotes.css">
    <body>
+         <div class="margin">
          <div class="quot">
              <span id="demo"></span>
          </div>
@@ -93,6 +14,7 @@
          <div class=circle>
          <a href="#" id="prev-quote">&#8249;</a>
          <a href="#" id="next-quote">&#8250;</a>
+         </div>
          </div>
    </body>
 
