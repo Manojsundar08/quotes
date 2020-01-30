@@ -8,27 +8,24 @@
             padding-top: 33vh;
             font-size: x-large;
             margin-bottom: 3%;
-            margin-right: 28%;
+           /* margin-right: 28%; */
             }
             .texts {
                 top: 3%;
                 font-weight: inherit;
             }
-
-       .circle {
-        margin-top: 3%;
+          a {
+              margin-top: 3%;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+          }    
+          a:hover {
+            background-color: #ddd;
+            color: black;
           }
-          .circle a {
-              text-decoration: none;
-              display: inline-block;
-              padding: 8px 16px;
-          }
-          .circle a {
-              background-color: #f1f1f1;
-              color: black;
-              border-radius: 50%;
-          }  
-          .circle:hover a {
-              background-color: #ddd;
-              color:black;
+          .round {
+            background-color: #f1f1f1;
+            color: black;
+            border-radius: 50%;
           }
